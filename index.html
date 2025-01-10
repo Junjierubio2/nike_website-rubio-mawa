@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">AirVault</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="javascript:void(0)" id="homeLink">HOME</a></li>
+                    <li><a href="javascript:void(0)" id="aboutLink">ABOUT</a></li>
+                    <li><a href="javascript:void(0)" id="servicesLink">SERVICES</a></li>
+                    <li><a href="javascript:void(0)" id="productsLink">PRODUCTS</a></li>
+                    <li><a href="javascript:void(0)" id="contactLink">CONTACT</a></li>
+                    <li><a href="javascript:void(0)" id="loginLink">LOGIN</a></li> 
+                    <li><a href="javascript:void(0)" id="signupLink">SIGN UP</a></li> 
+                </ul>
+            </div>
+        </div>
+
+            
+        <div class="content" id="home">
+            <h1>Life Is Short <br><span>Buy The Shoes!!!</span></h1>
+        </div>
+        <div class="content-section" id="home" style="display: none;">
+            <h2>Home</h2>
+        </div>
+        <div class="content-section" id="about" style="display: none;">
+            <h2>About Us</h2>
+            <p>Welcome to AirVault! We are committed to providing the best footwear for every occasion. Nike, Inc. is a global leader in the sportswear and athletic footwear industry. Founded in 1964 as Blue Ribbon Sports by Bill Bowerman and Phil Knight, it officially became Nike, Inc. in 1971, named after the Greek goddess of victory. Nike is headquartered in Beaverton, Oregon, and operates worldwide.</p>
+        </div>
+        <div class="content-section" id="services" style="display: none;">
+            <h2>Our Services</h2>
+            <p>Nike offers a range of services that complement its products, enhance customer experiences, and strengthen its brand loyalty. These services span fitness apps, customization options, memberships, and more, aimed at meeting customer needs in both athletic and lifestyle contexts.</p>
+        </div>
+        <div id="purchaseSuccessMessage" style="display: none; position: fixed; top: 20%; left: 50%; transform: translateX(-50%); background-color: #4CAF50; color: white; padding: 15px 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+            Successfully purchased!
+        </div>
+        <div class="content-section" id="products" style="display: none;">
+            <h2 style="text-align: center; font-size: 24px; margin-bottom: 20px;">Our Products</h2>
+            <div class="product-gallery">
+                
+                <div class="product-item">
+                    <img src="nike1.jpg" alt="Nike Air" class="product-img">
+                    <p>Fashion Foot Fashion Unisex shoes AJ1 Low Cut WolfGray Sneaker Shoes</p>
+                    <p>Price: ₱349.00</p>
+                    <button onclick="purchaseProduct('Fashion Foot Fashion Unisex shoes AJ1 Low Cut WolfGray Sneaker Shoes', 349.00)">Purchase</button>
+                </div>
+               
+                <div class="product-item">
+                    <img src="nike2.jpg" alt="Adidas Boost" class="product-img">
+                    <p>1916 NEW ARRIVAL ZOOM CANVAS RUNNING SHOES FOR MEN</p>
+                    <p>Price: ₱328.00</p>
+                    <button onclick="purchaseProduct('1916 NEW ARRIVAL ZOOM CANVAS RUNNING SHOES FOR MEN', 328.00)">Purchase</button>
+                </div>
+                
+                <div class="product-item">
+                    <img src="nike3.jpg" alt="Puma Classic" class="product-img">
+                    <p>New Fashion shoes size 35-40 women's 41-45 men's ! fashion shoes</p>
+                    <p>Price: ₱319.00</p>
+                    <button onclick="purchaseProduct('New Fashion shoes size for women and men  fashion shoes', 319.00)">Purchase</button>
+                </div>
+               
+                <div class="product-item">
+                    <img src="nike4.jpg" alt="Reebok Run" class="product-img">
+                    <p>NEWEST AIFORCE WHITE GOLD FASHION SHOES FOR MEN AND WOMEN</p>
+                    <p>Price: ₱239.00</p>
+                    <button onclick="purchaseProduct('NEWEST AIFORCE WHITE GOLD FASHION SHOES FOR MEN AND WOMEN', 328.00)">Purchase</button>
+                </div>
+                
+                <div class="product-item">
+                    <img src="nike5.jpg" alt="New Balance" class="product-img">
+                    <p>(Women's) AF1 low-top retro Sneakers OG Triple white OEM Quality with box</p>
+                    <p>Price: ₱1,039.00</p>
+                    <button onclick="purchaseProduct('Women AF1 low-top retro Sneakers OG Triple white OEM Quality with box', 1039.00)">Purchase</button>
+                </div>
+                
+                <div class="product-item">
+                    <img src="nike6.jpg" alt="Asics Gel" class="product-img">
+                    <p>fashion aF1 low cut white brown casual shoes for women and men sneaker</p>
+                    <p>Price: ₱499.00</p>
+                    <button onclick="purchaseProduct('fashion aF1 low cut white brown casual shoes for women and men sneaker', 499.00)">Purchase</button>
+                </div>
+            </div>
+        </div>        
+        <div class="content-section" id="contact" style="display: none;">
+            <h2>Contact Us</h2>
+            <p>Have any questions? Reach out to us at contact@airvault.com or call us at (123) 456-7890.</p>
+        </div> 
+    </div> 
+
+        <!-- Login Form (Initially Hidden) -->
+        <div class="form" id="loginForm" style="display: none;">
+            <button id="closeForm" style="position: absolute; right: 10px; top: 10px;">X</button> <!-- Close button -->
+            <h2>Login Here</h2>
+            <input type="email" name="email" placeholder="Enter Email">
+            <div style="position: relative; display: inline-block; width: 100%;">
+                <input type="password" id="password" placeholder="Enter Password" style="width: 68%;">
+                <input type="checkbox" id="showPassword" onclick="togglePassword()" style="position: fixed; right: 0; top: 18%; transform: translateX(25%) scale(0.8); cursor: pointer;">
+            </div>
+            <button class="btnn" onclick="login()">Login</button>
+
+            <p class="link">Don't have an account<br>
+            <a href="javascript:void(0)" id="switchToSignup">Sign up</a> here!</p>
+            <p class="liw">Log in with</p>
+
+            <div class="icon">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+            </div>
+        </div>
+
+        <!-- Sign-Up Form (Initially Hidden) -->
+        <div class="form" id="signupForm" style="display: none;">
+            <button id="closeSignupForm" style="position: absolute; right: 10px; top: 10px;">X</button> <!-- Close button -->
+            <h2>Sign Up Here</h2>
+            <input type="text" id="signupUsername" name="username" placeholder="Enter Username">
+            <input type="email" id="signupEmail" name="email" placeholder="Enter Email">
+            <input type="password" id="signupPassword" name="password" placeholder="Enter Password">
+            <button class="btnn" onclick="signup()">Sign Up</button>
+
+            <p class="link">Already have an account?<br>
+            <a href="javascript:void(0)" id="switchToLogin">Login</a> here!</p>
+        </div>
+    </div>
+
+    
+    <script>
+        document.getElementById("homeLink").addEventListener("click", function() {
+            displaySection("home");
+        });
+        document.getElementById("aboutLink").addEventListener("click", function() {
+            displaySection("about");
+        });
+        document.getElementById("servicesLink").addEventListener("click", function() {
+            displaySection("services");
+        });
+
+        document.getElementById("productsLink").addEventListener("click", function() {
+            displaySection("products");
+        });
+
+        document.getElementById("contactLink").addEventListener("click", function() {
+            displaySection("contact");
+        });
+        document.getElementById("loginLink").addEventListener("click", function() {
+            displaySection("login");
+        });
+        document.getElementById("signupLink").addEventListener("click", function() {
+            displaySection("signup ");
+        });
+        function purchaseProduct(productName, price) {
+    const confirmationMessage = `You have successfully purchased ${productName} for $${price}!`;
+
+    
+    const successMessage = document.getElementById("purchaseSuccessMessage");
+    successMessage.innerHTML = confirmationMessage; // Set the message dynamically
+    successMessage.style.display = "block";
+
+    // Hide the success message after 3 seconds
+    setTimeout(() => {
+        successMessage.style.display = "none";
+    }, 3000);
+}
+        
+        function displaySection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll(".content-section");
+            sections.forEach(section => {
+                section.style.display = "none";
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = "block";
+            }
+        }
+
+        
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const showPasswordCheckbox = document.getElementById("showPassword");
+            passwordField.type = showPasswordCheckbox.checked ? "text" : "password";
+        }
+
+        // Show Login Form when "Login" is clicked in the menu
+        document.getElementById("loginLink").addEventListener("click", function() {
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("signupForm").style.display = "none";
+        });
+
+        // Show Sign Up Form when "Sign Up" is clicked
+        document.getElementById("signupLink").addEventListener("click", function() {
+            document.getElementById("signupForm").style.display = "block";
+            document.getElementById("loginForm").style.display = "none";
+        });
+
+        // Hide Login Form when Close button is clicked
+        document.getElementById("closeForm").addEventListener("click", function() {
+            document.getElementById("loginForm").style.display = "none";
+        });
+
+        // Hide Sign Up Form when Close button is clicked
+        document.getElementById("closeSignupForm").addEventListener("click", function() {
+            document.getElementById("signupForm").style.display = "none";
+        });
+
+        
+        document.getElementById("switchToSignup").addEventListener("click", function() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("signupForm").style.display = "block";
+        });
+
+        
+        document.getElementById("switchToLogin").addEventListener("click", function() {
+            document.getElementById("signupForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        });
+
+        
+        function login() {
+            const email = document.querySelector('.form input[type="email"]').value.trim();
+            const password = document.querySelector('.form input[type="password"]').value.trim();
+
+            if (email === "" || password === "") {
+                alert("Please fill out all fields.");
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                alert("Please enter a valid email address.");
+            } else {
+                alert("Login successful!");
+            }
+        }
+
+        
+        function signup() {
+            const username = document.getElementById("signupUsername").value.trim();
+            const email = document.getElementById("signupEmail").value.trim();
+            const password = document.getElementById("signupPassword").value.trim();
+
+            // Validation for sign-up form
+            if (username === "" || email === "" || password === "") {
+                alert("Please fill out all fields.");
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                alert("Please enter a valid email address.");
+            } else {
+                alert("Account created successfully!");
+                console.log("Username:", username);
+                console.log("Email:", email);
+                console.log("Password:", password);
+                // Optionally, reset form after successful submission
+                document.getElementById("signupUsername").value = "";
+                document.getElementById("signupEmail").value = "";
+                document.getElementById("signupPassword").value = "";
+            }
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
